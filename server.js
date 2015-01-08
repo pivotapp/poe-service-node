@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var Server = require('annex-ws-node');
+var Server = require('annex-ws-node').Server;
 var http = require('http');
 var stack = require('connect-stack');
 var pns = require('pack-n-stack');
