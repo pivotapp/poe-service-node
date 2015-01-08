@@ -1,0 +1,26 @@
+{
+  "name": "poe-service-node",
+  "version": "0.1.0",
+  "description": "node.js service container ",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pivotapp/poe-service-node.git"
+  },
+  "author": "Cameron Bytheway <bytheway.cameron@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pivotapp/poe-service-node/issues"
+  },
+  "homepage": "https://github.com/pivotapp/poe-service-node",
+  "dependencies": {
+    "annex-marshal-msgpack-node": "^0.1.0",
+    "annex-ws-node": "^0.1.0",
+    "connect-metric": "^1.0.1",
+    "connect-stack": "^0.1.6",
+    "pack-n-stack": "^0.1.3"
+  }
+}
