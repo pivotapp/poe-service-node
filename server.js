@@ -27,6 +27,7 @@ module.exports = function createServer(opts) {
     var mod = routes[modName] = routes[modName] || {};
     var fn = mod[fnName] = mod[fnName] || [];
     fn.push(cb);
+    server.emit('register:call', modName, fnName);
     if (hasPushedRouter) return server;
     server.use(router);
     hasPushedRouter = true;

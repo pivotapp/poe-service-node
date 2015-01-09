@@ -5,6 +5,8 @@
 var dmarshal = require('annex-marshal-msgpack-node');
 var metric = require('connect-metric');
 var createServer = require('./server');
+var createClient = require('./client');
+var envs = require('envs');
 
 module.exports = function(opts) {
   opts = opts || {};
@@ -27,6 +29,17 @@ module.exports = function(opts) {
     next();
   });
   app.use(metric((opts.metric||{}).context, (opts.metric||{}).options));
+
+  app.durga = createClient(opts.durgaUrl || envs('DURGA_URL'),
+                           opts.serviceEnv || envs('SERVICE_ENV', 'prod'),
+                           opts.wsUrl || envs('WS_URL'));
+
+  app.on('register:call', function(mod, fn) {
+    if (app.durga) app.durga.register(mod, fn, 0);
+  });
+  app.on('register:cast', function(mod, fn) {
+    if (app.durga) app.durga.register(mod, fn, 1);
+  });
 
   return app;
 };
