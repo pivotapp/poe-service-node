@@ -31,7 +31,7 @@ module.exports = function(opts) {
   app.use(metric((opts.metric||{}).context, (opts.metric||{}).options));
 
   app.durga = createClient(opts.durgaUrl || envs('DURGA_URL'),
-                           opts.serviceEnv || envs('SERVICE_ENV', 'prod'),
+                           opts.serviceEnv || envs('SERVICE_ENV', 'development'),
                            opts.wsUrl || envs('WS_URL'));
 
   app.on('register:call', function(mod, fn) {
