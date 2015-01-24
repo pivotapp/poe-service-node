@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pivotapp/poe-service-node.git"
+    "url": "https://github.com/poegroup/poe-service-node.git"
   },
   "author": "Cameron Bytheway <bytheway.cameron@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pivotapp/poe-service-node/issues"
+    "url": "https://github.com/poegroup/poe-service-node/issues"
   },
-  "homepage": "https://github.com/pivotapp/poe-service-node",
+  "homepage": "https://github.com/poegroup/poe-service-node",
   "dependencies": {
     "annex-marshal-msgpack-node": "^0.2.0",
     "annex-ws-node": "^0.2.0",
