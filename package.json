@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/pivotapp/poe-service-node",
   "dependencies": {
-    "annex-marshal-msgpack-node": "^0.1.0",
+    "annex-marshal-msgpack-node": "^0.2.0",
     "annex-ws-node": "^0.2.0",
     "connect-metric": "^1.0.1",
     "connect-stack": "^0.1.6",

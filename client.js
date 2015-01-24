@@ -14,7 +14,7 @@ module.exports = function(url, service, host) {
   var client = new Client(url, {marshal: marshal});
 
   client.register = function(type, mod, fn, args, res) {
-    client.call('services', 'register', [service, host, type, mod, fn, args, res]);
+    client.call('services', 'register', [service, host, type, [mod, fn], args, res]);
   };
 
   return client;

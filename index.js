@@ -35,10 +35,10 @@ module.exports = function(opts) {
                            opts.wsUrl || envs('WS_URL'));
 
   app.on('register:call', function(mod, fn) {
-    if (app.durga) app.durga.register(mod, fn, 0);
+    if (app.durga) app.durga.register(0, mod, fn, []);
   });
   app.on('register:cast', function(mod, fn) {
-    if (app.durga) app.durga.register(mod, fn, 1);
+    if (app.durga) app.durga.register(1, mod, fn, []);
   });
 
   return app;
