@@ -13,6 +13,7 @@ module.exports = function(opts) {
   opts.marshal = opts.marshal || dmarshal;
   var app = createServer(opts);
 
+  app.use(metric((opts.metric||{}).context, (opts.metric||{}).options));
   app.use(function logger(req, res, next) {
     var start = Date.now();
     res.on('end', function() {
@@ -28,7 +29,6 @@ module.exports = function(opts) {
     })
     next();
   });
-  app.use(metric((opts.metric||{}).context, (opts.metric||{}).options));
 
   app.durga = createClient(opts.durgaUrl || envs('DURGA_URL'),
                            opts.serviceEnv || envs('SERVICE_ENV', 'development'),

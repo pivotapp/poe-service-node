@@ -18,7 +18,7 @@
   "homepage": "https://github.com/poegroup/poe-service-node",
   "dependencies": {
     "annex-marshal-msgpack-node": "^0.2.0",
-    "annex-ws-node": "^0.2.0",
+    "annex-ws-node": "^0.3.0",
     "connect-metric": "^1.0.1",
     "connect-stack": "^0.1.6",
     "envs": "^0.1.6",
